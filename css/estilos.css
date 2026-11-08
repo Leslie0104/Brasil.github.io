@@ -314,6 +314,478 @@ p{
     background-color: #0a4d52;
 }
 
+/* ===================== Rincones de Brasil ===================== */
+html {
+    scroll-behavior: smooth;
+}
+
+.rincones {
+    padding: 20px 20px 60px;
+}
+
+.ciudad {
+    max-width: 1200px;
+    margin: 0 auto 70px;
+    padding: 40px 30px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    scroll-margin-top: 20px;
+}
+
+.ciudad-intro {
+    text-align: center;
+}
+
+.ciudad-num {
+    display: inline-block;
+    background-color: #18e66d;
+    color: #0a4d52;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 6px 16px;
+    border-radius: 20px;
+}
+
+.ciudad .ciudad-titulo {
+    margin: 15px 0 25px;
+    color: #0a4d52;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+/* Línea animada bajo el título */
+.ciudad-titulo::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #18e66d, #3db368);
+    border-radius: 2px;
+    transform: translateX(-50%);
+    transition: width 1s ease 0.3s;
+}
+
+.visible .ciudad-titulo::after {
+    width: 120px;
+}
+
+.ciudad p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.ciudad .ciudad-lead {
+    font-size: 22px;
+    font-weight: bold;
+    color: #0a4d52;
+}
+
+.subtitulo {
+    text-align: center;
+    color: #0a4d52;
+    font-size: 22px;
+    margin: 40px 0 25px;
+}
+
+/* Tarjetas de lugares */
+.lugares {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+.lugar {
+    margin: 0;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.8s ease;
+}
+
+.lugar:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(10, 77, 82, 0.3);
+}
+
+.lugar-img {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.lugar-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+/* Brillo verde que aparece al pasar el cursor */
+.lugar-img::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10, 77, 82, 0.6), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.lugar:hover .lugar-img img {
+    transform: scale(1.12);
+    filter: saturate(1.2);
+}
+
+.lugar:hover .lugar-img::after {
+    opacity: 1;
+}
+
+.lugar-img.sin-foto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0a4d52, #3db368);
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    padding: 0 15px;
+}
+
+.lugar figcaption {
+    padding: 18px;
+    text-align: center;
+}
+
+.lugar h4 {
+    margin: 0 0 8px;
+    color: #0a4d52;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.lugar:hover h4 {
+    color: #3db368;
+}
+
+.ciudad .lugar p {
+    font-size: 15px;
+    margin: 0;
+}
+
+/* Cultura y tradiciones */
+.cultura {
+    margin-top: 45px;
+    padding: 25px 30px;
+    background-color: #0a4d52;
+    border-radius: 10px;
+    border-left: 8px solid #18e66d;
+}
+
+.cultura h3 {
+    margin-top: 0;
+    color: #18e66d;
+    text-align: center;
+    font-size: 22px;
+}
+
+.ciudad .cultura p {
+    color: #fff;
+    margin: 0;
+}
+
+/* Frase final */
+.ciudad .lema {
+    margin: 35px auto 0;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: bold;
+    color: #113d2e;
+    background-color: #3db368;
+    border-radius: 20px;
+    padding: 15px 25px;
+    width: fit-content;
+    max-width: 90%;
+}
+
+/* ===================== Cultura ===================== */
+.seccion-extra {
+    padding: 0 20px 40px;
+    scroll-margin-top: 20px;
+}
+
+.cultura-item {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    margin-top: 45px;
+    scroll-margin-top: 30px;
+}
+
+.cultura-item.invertido {
+    flex-direction: row-reverse;
+}
+
+.cultura-img {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    max-height: 320px;
+}
+
+.cultura-img img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.cultura-item:hover .cultura-img img {
+    transform: scale(1.08);
+}
+
+.cultura-texto {
+    flex: 1;
+    border-left: 6px solid #18e66d;
+    padding-left: 25px;
+}
+
+.cultura-item.invertido .cultura-texto {
+    border-left: none;
+    border-right: 6px solid #18e66d;
+    padding-left: 0;
+    padding-right: 25px;
+}
+
+.cultura-texto h3 {
+    color: #0a4d52;
+    font-size: 26px;
+    margin: 0 0 10px;
+}
+
+.ciudad .cultura-texto p {
+    text-align: left;
+    margin: 0;
+}
+
+/* Resaltado cuando se llega desde las tarjetas */
+.cultura-item:target .cultura-texto h3 {
+    animation: resaltar 1.5s ease;
+}
+
+@keyframes resaltar {
+    0%, 100% { color: #0a4d52; }
+    50% { color: #18e66d; }
+}
+
+/* ===================== Contacto ===================== */
+.contacto-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 35px;
+    margin-top: 30px;
+}
+
+.contacto-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contacto-form label {
+    font-weight: bold;
+    color: #0a4d52;
+    margin: 12px 0 6px;
+}
+
+.contacto-form input,
+.contacto-form textarea {
+    font-family: inherit;
+    font-size: 16px;
+    padding: 12px;
+    border: 2px solid #c5e9ea;
+    border-radius: 8px;
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    resize: vertical;
+}
+
+.contacto-form input:focus,
+.contacto-form textarea:focus {
+    outline: none;
+    border-color: #18e66d;
+    box-shadow: 0 0 0 4px rgba(24, 230, 109, 0.2);
+}
+
+.contacto-form .invalido {
+    border-color: #e05a5a;
+}
+
+.btn-enviar {
+    margin-top: 20px;
+    align-self: flex-start;
+    background-color: #18e66d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-enviar:hover {
+    background-color: #0a4d52;
+    transform: translateY(-3px);
+}
+
+.ciudad .form-estado {
+    font-size: 16px;
+    text-align: left;
+    margin: 12px 0 0;
+    font-weight: bold;
+}
+
+.form-estado.ok { color: #3db368; }
+.form-estado.error { color: #e05a5a; }
+
+.contacto-info {
+    background-color: #0a4d52;
+    border-radius: 10px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.3s ease;
+}
+
+.info-item:hover {
+    transform: translateX(8px);
+}
+
+.info-item img {
+    width: 35px;
+    height: 35px;
+}
+
+.info-item h4 {
+    margin: 0 0 4px;
+    color: #18e66d;
+}
+
+.ciudad .info-item p {
+    color: #fff;
+    font-size: 15px;
+    text-align: left;
+    margin: 0;
+}
+
+.redes-contacto {
+    display: flex;
+    gap: 15px;
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.redes-contacto img {
+    width: 32px;
+    transition: transform 0.3s ease;
+}
+
+.redes-contacto a:hover img {
+    transform: scale(1.2) rotate(-8deg);
+}
+
+.creditos {
+    font-size: 12px;
+    color: #0a4d52;
+    opacity: 0.7;
+    margin: 0 20px 20px;
+}
+
+@media screen and (max-width: 800px) {
+    .cultura-item,
+    .cultura-item.invertido {
+        flex-direction: column;
+    }
+
+    .cultura-img,
+    .cultura-texto {
+        width: 100%;
+    }
+
+    .cultura-img img {
+        height: 240px;
+    }
+
+    .contacto-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Efecto de aparición al hacer scroll */
+.js .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.js .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.js .lugar.reveal {
+    transition: opacity 0.8s ease, transform 0.5s ease, box-shadow 0.4s ease;
+}
+
+.js .lugar.reveal.visible:hover {
+    transform: translateY(-10px);
+}
+
+/* Animación suave del menú desplegable */
+.dropdown:hover .dropdown-content {
+    animation: dropdownFade 0.3s ease;
+}
+
+@keyframes dropdownFade {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media screen and (max-width: 600px) {
+    .ciudad {
+        padding: 25px 15px;
+    }
+
+    .ciudad .lema {
+        font-size: 18px;
+    }
+
+    .cultura {
+        padding: 20px 15px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .js .reveal, .lugar, .lugar-img img, .ciudad-titulo::after { transition: none; }
+    .js .reveal { opacity: 1; transform: none; }
+}
+
 /* Footer */
 footer {
     background-color: #0a4d52;
