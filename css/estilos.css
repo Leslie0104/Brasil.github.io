@@ -1,0 +1,512 @@
+/* estilos Generales */
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #0a4d52;
+    background-color: #d1f3f4;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #18e66d;
+}
+
+/* Encabezado */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0a4d52;
+    color: #fff;
+    padding: 20px;
+}
+
+.logo img {
+    height: 80px;
+    width: 80px;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+header nav ul li {
+    display: inline-block;
+}
+
+/* Selector de idioma */
+.idioma {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.idioma select {
+    border: none;
+    border-radius: 15px;
+    background: #18e66d;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px 10px;
+    color: #000000;
+}
+
+/* Texto y Títulos */
+h1 {
+    color: #080808;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0 25px;
+    padding: 0 100px;
+    text-align: left;
+    align-items: center;
+}
+
+h2 {
+    color: #080808;
+    margin-bottom: 30px;
+    margin-top: 200px;
+    text-align: center;
+    font-size: 30px;
+}
+
+p {
+    color: #080808;
+    text-align: center;
+    font-size: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+/* Estilos específicos para el Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Caja de texto destacada (Corregido contraste y tamaño de h2) */
+.caja-texto {
+    text-align: center;
+    padding: 20px 35px;
+    background-color: #3db368;
+    border-radius: 20px;
+    margin: 30px auto;
+    width: fit-content;
+}
+
+.caja-texto h2 {
+    margin: 0;
+    font-size: 22px;
+    color: #07291c;
+    font-weight: bold;
+}
+
+/* Banner principal (Corregido contraste sobre imagen) */
+.banner {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    background-image: url('../images/cristo.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 830px;
+    display: flex;
+    margin: 20px;
+}
+
+.banner-content {
+    background-color: rgba(255, 255, 255, 0.88);
+    padding: 20px;
+    width: 40%;
+    border-radius: 10px;
+    color: #080808;
+    text-align: left;
+    margin: 8%;
+}
+
+.banner-content h1 {
+    margin: 8% 0;
+    padding: 0 20px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #080808;
+}
+
+.banner-content p {
+    margin-top: 2%;
+    font-size: 20px;
+    text-align: center;
+    color: #080808;
+}
+
+/* Slideshow (Corregido contraste en flechas y textos sobre fotos) */
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.65);
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.text {
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.65);
+    font-size: 25px;
+    padding: 12px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #767676;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #0a4d52;
+}
+
+/* Animación de desvanecimiento */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/* Sección de Destacados */
+.destacados {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+}
+
+.tarjeta {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    width: 100%;
+    max-width: 300px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.tarjeta:hover {
+    transform: scale(1.05);
+}
+
+.tarjeta img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Corregido contraste de botones de tarjetas: texto oscuro sobre verde brillante */
+.tarjeta .btn {
+    display: inline-block;
+    background-color: #18e66d;
+    color: #052e16;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tarjeta .btn:hover {
+    background-color: #0a4d52;
+    color: #ffffff;
+}
+
+/* Footer (Actualizado de h4 a h3 para coincidir con el HTML) */
+footer {
+    background-color: #0a4d52;
+    color: #ffffff;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: left;
+    gap: 30px;
+}
+
+footer h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+footer ul li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+footer .redes-sociales a img,
+footer .contacto a img {
+    width: 25px;
+    transition: transform 0.3s ease;
+}
+
+footer .redes-sociales a img:hover,
+footer .contacto a img:hover {
+    transform: scale(1.2);
+}
+
+/* Media Queries para diferentes tamaños */
+
+/* Para pantallas pequeñas (móviles, menos de 600px) */
+@media screen and (max-width: 600px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .idioma {
+        position: static;
+        margin: 10px auto;
+    }
+
+    .banner-content {
+        width: 100%;
+        margin: 5%;
+        padding: 15px;
+    }
+
+    .banner-content h1 {
+        width: 80%;
+        margin: 5% auto;
+        padding: 10px;
+        height: auto;
+    }
+
+    .banner-content p {
+        width: 85%;
+        margin: 6% auto;
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-top: 100px;
+    }
+
+    p {
+        font-size: 20px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .destacados {
+        padding-inline: 0;
+    }
+
+    .tarjetas {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .tarjeta {
+        width: 90%;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-links h3,
+    .redes-sociales h3,
+    .contacto h3 {
+        text-align: center;
+    }
+
+    .footer-links a,
+    .redes-sociales a,
+    .contacto a {
+        margin-inline: auto;
+    }
+}
+
+/* Para tablets (pantallas entre 600px y 1024px) */
+@media screen and (max-width: 1024px) {
+    .banner {
+        height: auto;
+        min-height: 600px;
+    }
+
+    .banner-content {
+        width: 100%;
+        margin: 5%;
+        padding: 15px;
+    }
+
+    .banner-content p {
+        width: 90%;
+        margin: 10px auto;
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    .tarjetas {
+        justify-content: space-around;
+    }
+}
+
+/* Mensaje de Bienvenida (Corregido contraste usando color sólido oscuro) */
+#mensaje-bienvenida {
+    position: fixed;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2b2929;
+    color: #ffffff;
+    padding: 1em 2em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.3em;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    animation: fadeInDown 0.5s ease-out;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+#cerrar-mensaje {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.3em;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+#cerrar-mensaje:hover {
+    color: #e4c254;
+}
+
+@keyframes fadeInDown {
+    from {
+        transform: translate(-50%, -100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}
